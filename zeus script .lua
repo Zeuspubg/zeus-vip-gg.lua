@@ -1,4 +1,23 @@
-gg.alert("ZEUS VİP GG")
+PW = gg.prompt({'🔒 ᴀɴᴀʜᴛᴀʀ ꜱɪꜰʀᴇꜱɪɴɪ ɢɪʀɪɴ : '},{[1]=''},{[1]='text'})
+if not PW then return
+end 
+if PW[1] == "" then gg.alert(" ᴠɪᴘ ꜱᴄ ᴀɴᴀʜᴛᴀʀɪ") os.exit() end
+if PW[1] =="ZEUS" then 
+print("𝐀𝐍𝐀𝐇𝐓𝐀𝐑")
+ gg.toast('✨《 𝐒̧İ𝐅𝐑𝐄 𝐃𝐎𝐆̆𝐑𝐔 𝐇İ𝐋𝐄𝐘𝐄 𝐔𝐋𝐀𝐒̧𝐀𝐁İ𝐋İ𝐑𝐒İ𝐍 》✨')
+else 
+ gg.alert(" 𝐘𝐀𝐍𝐋𝐈𝐒̧ 😡")  return end 
+gg.sleep(900)
+gg.toast("%10")
+gg.sleep(900)
+gg.toast("%20")
+
+
+gg.alert("DONE ✅")
+
+
+
+
 
 function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast(Name.."  modify"..#data.."Article data") local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item)end end end gg.setValues(t) else gg.toast(Name.."Failed to open", false) return false end else gg.toast(Name.."Failed to open") return false end end function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString)) break end nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len(szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, qmxg) for x = 1, #(qmxg) do xgpy = szpy + qmxg[x]["offset"] xglx = qmxg[x]["type"] xgsz = qmxg[x]["value"] gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) xgsl = xgsl + 1 end end function xqmnb(qmnb) gg.clearResults() gg.setRanges(qmnb[1]["memory"]) gg.searchNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "Failed to open") else gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. "开启失败") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(qmnb) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + qmnb[v]["offset"] pysz[1].flags = qmnb[v]["type"] szpy = gg.getValues(pysz) pdpd = qmnb[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, qmxg) xgjg = true end end if xgjg == true then gg.toast(qmnb[2]["name"] .. "Smile reminder: open successfully, modify a total" .. xgsl .. "ArticleΔΘ") else gg.toast(qmnb[2]["name"] .. "Smile reminder: failed to open") end end end end function PS() end function setvalue(address,flags,value) PS('Modify address value (address, value type, value to be modified)') local tt={} tt[1]={} tt[1].address=address tt[1].flags=flags tt[1].value=value gg.setValues(tt) end 
 function SearchWrite(Search, Write, Type, Name)  gg.clearResults()  gg.setVisible(false)  gg.searchNumber(Search[1][1], Type)  local count = gg.getResultCount()  local result = gg.getResults(count)  gg.clearResults()  local data = {}  local base = Search[1][2]  if (count > 0) then  for i, v in ipairs(result) do  v.isUseful = true  end  for k=2, #Search do  local tmp = {}  local offset = Search[k][2] - base  local num = Search[k][1]  for i, v in ipairs(result) do  tmp[#tmp+1] = {}  tmp[#tmp].address = v.address + offset  tmp[#tmp].flags = v.flags  end  tmp = gg.getValues(tmp)  for i, v in ipairs(tmp) do  if ( tostring(v.value) ~= tostring(num) ) then  result[i].isUseful = false  end  end  end  for i, v in ipairs(result) do  if (v.isUseful) then  data[#data+1] = v.address  end  end  if (#data > 0) then  gg.toast("Found"..#data.."Code Data")  local t = {}  local base = Search[1][2]  for i=1, #data do  for k, w in ipairs(Write) do  offset = w[2] - base  t[#t+1] = {}  t[#t].address = data[i] + offset  t[#t].flags = Type  t[#t].value = w[1]  if (w[3] == true) then  local item = {}  item[#item+1] = t[#t]  item[#item].freeze = true  gg.addListItems(item)  end  end  end  gg.setValues(t)  gg.toast(Name.."Successfully opened!  already"..#t.."Code Data")  gg.addListItems(t)  else  gg.toast(Name.."Failed to open", false)  return false  end  else  gg.toast(Name.."Failed to open")  return false  end  end
@@ -30,6 +49,9 @@ gg.toast("𝑆𝐶𝑅𝐼𝑃𝑇  𝐵𝑌 𝑍𝐸𝑈𝑆")
 gg.sleep(900)
 gg.toast("𝑆𝐶𝑅𝐼𝑃𝑇  𝐵𝑌 𝑍𝐸𝑈𝑆")
 
+
+
+
 on = ""
 off = "️"
 
@@ -41,15 +63,15 @@ FASTLAND = off
 HOME = 1
 function HOME()
   MN8 = gg.choice({  
-       "╭═══════════════╮\n    🛡𝑨𝑵𝑻𝑰𝑩𝑨𝑵🛡 ️\n╰═══════════════╯",
-       "╭═══════════════╮\n    👿𝑹𝑰𝑺𝑲 𝑴𝑬𝑵𝑼👿\n╰═══════════════╯",
-       "╭═══════════════╮\n    🤡𝑶𝒀𝑼𝑵 𝑴𝑬𝑵𝑼🤡\n╰═══════════════╯",
-       "╭═══════════════╮\n    ⚡𝐒𝐏𝐄𝐄𝐃 𝐌𝐄𝐍𝐔⚡\n╰═══════════════╯",
-       "╭═══════════════╮\n    🌚𝐒𝐊𝐈𝐍 𝐌𝐄𝐍𝐔🌝\n╰═══════════════╯",
+       "╭═══════════════╮\n    🛡𝐀𝐍𝐓𝐈𝐁𝐀𝐍🛡 ️\n╰═══════════════╯",
+       "╭═══════════════╮\n    🇹🇷𝐑𝐈𝐒𝐊 𝐌𝐄𝐍𝐔🇹🇷\n╰═══════════════╯",
+       "╭═══════════════╮\n    🇹🇷️𝐎𝐘𝐔𝐍 𝐌𝐄𝐍𝐔🇹🇷\n╰═══════════════╯",
+       "╭═══════════════╮\n    🇹🇷𝐒𝐏𝐄𝐄𝐃 𝐌𝐄𝐍𝐔🇹🇷\n╰═══════════════╯",
+       "╭═══════════════╮\n     🇹🇷𝐒𝐊𝐈𝐍 𝐌𝐄𝐍𝐔🇹🇷\n╰═══════════════╯",
        "╭═══════════════╮\n    🚔𝐀𝐑𝐀𝐁𝐀 𝐔𝐂𝐔𝐑𝐌𝐀ᵃᶜᵏᵃᵖᵃᵗ🚔\n╰═══════════════╯",
        "╭═══════════════╮\n    ⌚𝐇𝐈𝐙𝐋𝐈 𝐏𝐀𝐑𝐀𝐒𝐔𝐓ᵃᶜᵏᵃᵖᵃᵗ⌚\n╰═══════════════╯" .. FASTLAND,
        "╭═══════════════╮\n     🇹🇷𝙲𝙸𝙺𝙸𝚂🇹🇷\n╰═══════════════╯",
-    }, 10, os.date("🗓️ Tᴀʀɪʜ: %d/%m/%Y 🗓️  "))
+    }, 10, os.date("✩｡:*•.─────❁ ❁─────.•*:｡✩\n 🖤 𝚉𝙴𝚄𝚂 𝚂𝙲𝚁𝙸𝙿𝚃︎︎︎ ❤️ \n 🍯 𝚅𝙴𝚁𝚂𝙸𝙾𝙽 𝚅1.0 ㊙️ 𝙿𝚄𝙱𝙶 1.6.0 𝐙𝐄𝐔𝐒𝐒𝐒 \n ❮ 🗓️ Tᴀʀɪʜ: %d/%m/%Y 🗓️❯\n✩｡:*•.─────❁ ❁─────.•*:｡✩"))
    
     
     
@@ -2869,69 +2891,6 @@ so=gg.getRangesList('libUE4.so')[1].start
 py=0x140D86C
 setvalue(so+py,16,-1.25420031e28)
 gg.clearResults()
-    gg.setRanges(gg.REGION_CODE_APP)
-    gg.searchNumber("-1585267064848315881", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    s1 = gg.getResults(100)
-    gg.editAll("-1585267068834414550", gg.TYPE_QWORD)
-    gg.clearResults()
-    gg.setRanges(gg.REGION_CODE_APP)
-    gg.searchNumber("1,873,498,234,778,812,417", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("1,873,498,234,778,812,417", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("1,873,498,234,778,812,417", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH1 = gg.getResults(1000)
-    gg.editAll("1,873,498,234,778,812,416", gg.TYPE_QWORD)
-    gg.clearResults()
-    gg.setRanges(gg.REGION_CODE_APP)
-    gg.searchNumber("403,635,275,035,574,273", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("403,635,275,035,574,273", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("403,635,275,035,574,273", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH2 = gg.getResults(1000)
-    gg.editAll("403,635,275,035,574,272", gg.TYPE_QWORD)
-    gg.clearResults()
-    gg.setRanges(gg.REGION_CODE_APP)
-    gg.searchNumber("-2,044,616,634,647,180,784", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("-2,044,616,634,647,180,784", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("-2,044,616,634,647,180,784", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH3 = gg.getResults(1000)
-    gg.editAll("-2,044,616,634,647,180,800", gg.TYPE_QWORD)
-    gg.clearResults()
-    gg.setRanges(gg.REGION_CODE_APP)
-    gg.searchNumber("-1296744149883614555", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("-1296744149883614555", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    gg.refineNumber("-1296744149883614555", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH4 = gg.getResults(1000)
-    gg.editAll("-1296744153870237696", gg.TYPE_QWORD)
-    gg.clearResults()
-    gg.setVisible(false)
-    gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
-    gg.searchNumber("-6.03221444e26;-1.3078764e28;-3.74440972e28;-1.86389771E-20;-1.11445016e28;-9.39921508e20;-1.8331477e27:33", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-    gg.searchNumber("-1.86389771E-20", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH7 = gg.getResults(100)
-    gg.editAll("0", gg.TYPE_FLOAT)
-    gg.clearResults()
-    gg.searchNumber("-1505254313802431360", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH85 = gg.getResults(9000000000000000000)
-    gg.editAll("-1505254313804899999", gg.TYPE_QWORD)
-    gg.clearResults()
-    gg.clearResults()
-    gg.clearResults()
-    gg.setRanges(gg.REGION_ANONYMOUS)
-    gg.searchNumber("30D;10D;0F~1F;257D;3D::40", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-    gg.searchNumber("0.08600000292", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH74 = gg.getResults(100)
-    gg.editAll("0.4", gg.TYPE_FLOAT)
-    gg.clearResults()
-    gg.setRanges(gg.REGION_ANONYMOUS)
-    gg.searchNumber("30D;10D;0.0~1.0F;257D;3D::40", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-    gg.searchNumber("0.10000000149", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-    FLVVSH90 = gg.getResults(100)
-    gg.editAll("0.4", gg.TYPE_FLOAT)
-    gg.clearResults()
-    gg.setRanges(gg.REGION_C_DATA)
-    gg.searchNumber("-3.693674e20;-1.2382424e28;-8.5076384e22::", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL)
-    gg.searchNumber("-1.2382424e28", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL)
-    HENI = gg.getResults(2)
-    gg.editAll("0", gg.TYPE_FLOAT)
 gg.toast("⚡Flash Açıldı 𝚉𝙴𝚄𝚂𝚂")
 FLASH = on
 else
@@ -2942,16 +2901,7 @@ so=gg.getRangesList('libUE4.so')[1].start
 py=0x140D86C
 setvalue(so+py,16,-1.25420021e28)
 gg.setValues(s1)
-    gg.setValues(FLVVSH1)
-    gg.setValues(FLVVSH2)
-    gg.setValues(FLVVSH3)
-    gg.setValues(FLVVSH4)
-    gg.setValues(FLVVSH7)
-    gg.setValues(FLVVSH85)
-    gg.setValues(FLVVSH74)
-    gg.setValues(FLVVSH90)
-    gg.setValues(HENI)
-    gg.clearResults()
+     gg.clearResults()
 gg.toast("⚡Flash Kapatıldı 𝚉𝙴𝚄𝚂𝚂")
   FLASH = off
 end
